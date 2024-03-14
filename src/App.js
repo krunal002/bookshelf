@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
+  const books = [
+    {
+      name: "book 1",
+      author: "writer1",
+      category: "a",
+      cover:
+        "https://th.bing.com/th/id/OIP.0JmYG5E90CH44HqiMM05iwHaLH?rs=1&pid=ImgDetMain",
+    },
+    {
+      name: "book 2",
+      author: "writer1",
+      category: "a",
+      cover:
+        "https://th.bing.com/th/id/OIP.0JmYG5E90CH44HqiMM05iwHaLH?rs=1&pid=ImgDetMain",
+    },
+    {
+      name: "book 3",
+      author: "writer1",
+      category: "a",
+      cover:
+        "https://th.bing.com/th/id/OIP.0JmYG5E90CH44HqiMM05iwHaLH?rs=1&pid=ImgDetMain",
+    },
+    {
+      name: "book 4",
+      author: "writer1",
+      category: "a",
+      cover:
+        "https://th.bing.com/th/id/OIP.0JmYG5E90CH44HqiMM05iwHaLH?rs=1&pid=ImgDetMain",
+    },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Bokshelf</h1>
+      
+      {books.map((book) => (
+        <section>
+          <p>{book.name}</p>
+        </section>
+      ))}
     </div>
   );
 }
