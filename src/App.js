@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./App.css";
 import Book from "./Components/book";
+import { BookContext } from "./Context/bookselfContext";
 
 function App() {
   const books = [
@@ -39,9 +40,13 @@ function App() {
   const dataToShow =
     reqCat === "all" ? books : books.filter((book) => book.category === reqCat);
 
+
+    // context
+  const {book} = useContext(BookContext)
+
   return (
     <div className="App">
-      <h1>Bokshelf</h1>
+      <h1>Bokshelf {book}</h1>
 
       <nav>
         <button onClick={(e) => setReqCat("all")}>cat all</button>
