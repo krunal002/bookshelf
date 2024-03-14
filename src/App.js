@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Book from "./Components/book";
 
 function App() {
   const books = [
@@ -49,20 +50,7 @@ function App() {
         <button onClick={(e) => setReqCat("c")}>cat c</button>
       </nav>
 
-      <main className="primary-container">
-        {dataToShow.map((book) => (
-          <section className="book-wrapper">
-            <img
-              src={book.cover}
-              alt="book-cover"
-              className="book-cover-wrapper"
-            />
-            <p>{book.name}</p>
-            <p>{book.author}</p>
-            <p>{book.category}</p>
-          </section>
-        ))}
-      </main>
+      <Book data={dataToShow}/>
     </div>
   );
 }
