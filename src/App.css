@@ -7,16 +7,35 @@
   text-align: center;
 }
 
+/* navbar */
+.nav-button-wrapper,#category-wrapper {
+  margin: 8px;
+  padding: 8px;
+  width: 150px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  /* background-color: aqua; */
+}
+.nav-button-wrapper:hover {
+  background-color: gray;
+  color: aliceblue;
+}
+
+/* card container */
 .primary-container {
   max-width: 1000px;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .book-wrapper {
+  margin: 8px;
   border: 1px solid gray;
+  border-radius: 8px;
+  max-width: 200px;
 }
 .book-cover-wrapper {
   height: 200px;
 }
+
