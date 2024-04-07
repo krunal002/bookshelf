@@ -2,18 +2,25 @@ import { useContext } from "react";
 import { BookContext } from "../Context/bookselfContext";
 
 const Book = () => {
-  const { bookData, setBookData } = useContext(BookContext);
+  const { bookData, setBookData, reqCat } = useContext(BookContext);
+
   const clickHandler = (id, cat) => {
-    // console.log("clicked");
+    // console.log("clicked",id, cat);
     const newBookData = bookData.map((book) =>
       book.id === id ? { ...book, category: cat } : book
     );
     setBookData(newBookData);
   };
 
+  const finalData =
+    reqCat === "all"
+      ? bookData
+      : bookData.filter((book) => book.category === reqCat);
+  // console.log("updated data - ", bookData);
+
   return (
     <main className="primary-container">
-      {bookData?.map((book) => (
+      {finalData?.map((book) => (
         <section className="book-wrapper">
           <img
             src={book.cover}
@@ -22,12 +29,14 @@ const Book = () => {
           />
           <p>{book.name}</p>
           <p>{book.author}</p>
-          {/* <p>{book.category}</p> */}
 
           <div>
-            {/* <label htmlFor="category">Select category</label> */}
-            <select name="category" id="category-wrapper" value={book.category} onClick={(e) => clickHandler(book.id, e.target.value)}>
-              <option value="">Currently Reading</option>
+            <select
+              name="category"
+              id="category-wrapper"
+              value={book.category}
+              onChange={(e) => clickHandler(book.id, e.target.value)}
+            >
               <option value="Currently Reading">Currently Reading</option>
               <option value="Want to Read">Want to Read</option>
               <option value="Completed">Completed</option>
