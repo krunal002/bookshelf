@@ -6,8 +6,6 @@ export const BookshelfContextHandler = ({ children }) => {
   const [bookData, setBookData] = useState(booksData);
   const [reqCat, setReqCat] = useState("all");
 
-  
-
   const reducerFun = (state, action) => {
     switch (action.type) {
       case "name":
@@ -16,6 +14,8 @@ export const BookshelfContextHandler = ({ children }) => {
         return { ...state, author: action.payload };
       case "category":
         return { ...state, category: action.payload };
+      case "cover":
+        return { ...state, cover: action.payload };
       default:
         return state;
     }
@@ -25,6 +25,7 @@ export const BookshelfContextHandler = ({ children }) => {
     name: "",
     author: "",
     Category: "",
+    cover: "",
   };
   const [state, dispatch] = useReducer(reducerFun, intialState);
 
@@ -35,15 +36,25 @@ export const BookshelfContextHandler = ({ children }) => {
       author: state.author,
       category: state.category,
       cover:
-        "https://th.bing.com/th/id/OIP.0JmYG5E90CH44HqiMM05iwHaLH?rs=1&pid=ImgDetMain",
-    }
+        state.cover === ""
+          ? "https://th.bing.com/th/id/OIP.0JmYG5E90CH44HqiMM05iwHaLH?rs=1&pid=ImgDetMain"
+          : state.cover,
+    };
 
-    setBookData([...bookData, newBook])
-  }
+    setBookData([...bookData, newBook]);
+  };
 
   return (
     <BookContext.Provider
-      value={{ bookData, setBookData, reqCat, setReqCat, state, dispatch, addBook }}
+      value={{
+        bookData,
+        setBookData,
+        reqCat,
+        setReqCat,
+        state,
+        dispatch,
+        addBook,
+      }}
     >
       {children}
     </BookContext.Provider>

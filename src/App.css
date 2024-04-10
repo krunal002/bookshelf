@@ -37,5 +37,10 @@
 }
 .book-cover-wrapper {
   height: 200px;
+  width: 150px;
+}
+
+.input-bookCover-wrapper{
+  padding: 100px;
 }
 
