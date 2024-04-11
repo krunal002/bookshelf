@@ -20,6 +20,8 @@ export const BookshelfContextHandler = ({ children }) => {
         return intialState;
       case "update":
         return action.payload;
+      case "rating":
+        return { ...state, rating: action.payload };
       case "name":
         return { ...state, name: action.payload };
       case "author":

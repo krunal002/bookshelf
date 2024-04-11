@@ -17,23 +17,20 @@
   min-height: 100vh;
 }
 
-
 /* header */
-.bookself-header-container{
-  /* color: var(--secondary-color); */
+.bookself-header-container {
   text-align: left;
   padding: 16px;
   background-color: var(--fifth-color);
 }
 
 /* navbar */
-.bookself-navbar-container{
+.bookself-navbar-container {
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  /* padding-left: 16px; */
 }
 
 .nav-button-wrapper,
@@ -78,14 +75,72 @@
 }
 
 /* Book Details */
-.bookDetails-primary-container{
+.bookDetails-main-container {
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+.details-header-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
+  align-items: center;
+  justify-content: space-around;
+  padding: 32px;
+  background-color: var(--third-color);
+}
+
+.bookDetails-primary-container {
+  background-color: var(--third-color);
+  margin: 24px auto;
+  padding: 16px;
+  max-width: 800px;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px;
   text-align: left;
-  margin-top: 20px;
+}
+
+.details-image-wrapper{
+  width: 300px;
+  height: 450px;
+}
+
+.bookDetails-name{
+  font-size: 32px;
+  padding-bottom: 8px;
+}
+.bookDetails-author{
+  font-size: 24px;
+}
+.catSelector-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 16px;
+}
+.description-container{
+  max-width: 450px;
+  padding: 24px 0;
+}
+.description-genre{
+  padding: 8px 0;
+}
+.rating-container{
+  background-color: var(--background-color);
+  padding: 8px;
+  border-radius: 8px;
+  text-align: center;
+}
+.operational-button{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
 }
 
 @media (min-width: 900px) {
@@ -136,11 +191,3 @@
 ::-webkit-scrollbar {
   width: 0;
 }
-
-/* 
-1 - a2d2ff
-2 - bde0fe
-3 - ffafcc
-4 - ffc8dd
-5 - cdb4db
-*/
