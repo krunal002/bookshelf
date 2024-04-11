@@ -72,6 +72,11 @@ export const BookshelfContextHandler = ({ children }) => {
     }
   };
 
+  const deleteBook = (data) => {
+    const newBookData = bookData.filter(({ id }) => id !== data.id);
+    setBookData(newBookData);
+  };
+
   return (
     <BookContext.Provider
       value={{
@@ -83,6 +88,7 @@ export const BookshelfContextHandler = ({ children }) => {
         dispatch,
         addBook,
         updateBook,
+        deleteBook,
       }}
     >
       {children}

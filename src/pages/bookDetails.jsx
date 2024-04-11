@@ -13,9 +13,14 @@ import BookForm from "../Components/bookForm";
 const BookDetails = () => {
   const { bookId } = useParams();
   const navigate = useNavigate();
-  const { bookData } = useContext(BookContext);
+  const { bookData, deleteBook } = useContext(BookContext);
 
   const reqBookDetails = bookData.find(({ id }) => id === bookId);
+
+  const handleDelete = () => {
+    deleteBook(reqBookDetails);
+    navigate("/");
+  };
 
   return (
     <main className="bookDetails-main-container">
@@ -74,7 +79,12 @@ const BookDetails = () => {
 
           <Stack direction="row" className="operational-button">
             <BookForm data={reqBookDetails} />
-            <Button variant="contained" color="error" sx={{ width: 100 }}>
+            <Button
+              variant="contained"
+              color="error"
+              sx={{ width: 100 }}
+              onClick={handleDelete}
+            >
               Delete
             </Button>
           </Stack>
