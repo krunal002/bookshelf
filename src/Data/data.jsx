@@ -4,6 +4,7 @@ export const booksData = [
     name: "The Hunger Games",
     author: "Suzanne Collins",
     category: "Completed",
+    rating: 4.5,
     cover:
       "https://res.cloudinary.com/dfw7zitgl/image/upload/v1712728714/bookself/The%20Hunger%20Games.jpg",
   },
@@ -12,6 +13,7 @@ export const booksData = [
     name: "To Kill a Mockingbird",
     author: "Harper Lee",
     category: "Want to Read",
+    rating: 3.5,
     cover:
       "https://res.cloudinary.com/dfw7zitgl/image/upload/v1712728847/bookself/To%20Kill%20a%20Mockingbird.jpg",
   },
@@ -20,6 +22,7 @@ export const booksData = [
     name: "The Book Thief",
     author: "Markus Zusak",
     category: "Currently Reading",
+    rating: 4,
     cover:
       "https://res.cloudinary.com/dfw7zitgl/image/upload/v1712729103/bookself/The%20Book%20Thief.jpg",
   },
@@ -28,6 +31,7 @@ export const booksData = [
     name: "The Lightning Thief",
     author: "Rick Riordan",
     category: "Completed",
+    rating: 5,
     cover:
       "https://res.cloudinary.com/dfw7zitgl/image/upload/v1712729246/bookself/The%20Lightning%20Thief.jpg",
   },
@@ -36,6 +40,7 @@ export const booksData = [
     name: "Divergent",
     author: "Veronica Roth",
     category: "Currently Reading",
+    rating: 2.5,
     cover:
       "https://res.cloudinary.com/dfw7zitgl/image/upload/v1712729460/bookself/Divergent.jpg",
   },
@@ -44,6 +49,7 @@ export const booksData = [
     name: "Lord of the Flies",
     author: "William Golding",
     category: "Currently Reading",
+    rating: 4,
     cover:
       "https://res.cloudinary.com/dfw7zitgl/image/upload/v1712729612/bookself/Lord%20of%20the%20Flies.jpg",
   },
@@ -52,6 +58,7 @@ export const booksData = [
     name: "City of Bones",
     author: "Cassandra Clare",
     category: "Completed",
+    rating: 3,
     cover:
       "https://res.cloudinary.com/dfw7zitgl/image/upload/v1712729883/bookself/City%20of%20Bones.jpg",
   },
@@ -60,6 +67,7 @@ export const booksData = [
     name: "Fahrenheit 451",
     author: "Ray Bradbury",
     category: "Want to Read",
+    rating: 4.5,
     cover:
       "https://res.cloudinary.com/dfw7zitgl/image/upload/v1712730046/bookself/Fahrenheit%20451.jpg",
   },
@@ -68,6 +76,7 @@ export const booksData = [
     name: "1984",
     author: "George Orwell",
     category: "Currently Reading",
+    rating: 2,
     cover:
       "https://res.cloudinary.com/dfw7zitgl/image/upload/v1712732177/bookself/1984.jpg",
   },
@@ -76,6 +85,7 @@ export const booksData = [
     name: "The Catcher in the Rye",
     author: "J.D. Salinger",
     category: "Completed",
+    rating: 3.5,
     cover:
       "https://res.cloudinary.com/dfw7zitgl/image/upload/v1712732437/bookself/The%20Catcher%20in%20the%20Rye.jpg",
   },
@@ -84,6 +94,7 @@ export const booksData = [
     name: "Feed",
     author: "Mira Grant",
     category: "Want to Read",
+    rating: 1.5,
     cover:
       "https://res.cloudinary.com/dfw7zitgl/image/upload/v1712732584/bookself/Feed.jpg",
   },
@@ -92,8 +103,9 @@ export const booksData = [
     name: "Black Fire",
     author: "William Kely McClung",
     category: "Currently Reading",
+    rating: 4.5,
     cover:
-      "https://res.cloudinary.com/dfw7zitgl/image/upload/v1712732683/bookself/Black%20Fire.jpg+",
+      "https://res.cloudinary.com/dfw7zitgl/image/upload/v1712732683/bookself/Black%20Fire.jpg",
   },
 ];
 // Currently Reading

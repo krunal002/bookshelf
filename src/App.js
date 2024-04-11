@@ -1,16 +1,15 @@
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Book from "./Components/book";
-import Navbar from "./Components/nav";
-import Header from "./Components/header";
-// import ImageUpload from "./Components/image";
+import BookDetails from "./pages/bookDetails";
+import Bookself from "./pages/main";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Navbar />
-      <Book />
-      {/* <ImageUpload/> */}
+      <Routes>
+        <Route path="/" element={<Bookself />} />
+        <Route path="/details/:bookId" element={<BookDetails />} />
+      </Routes>
     </div>
   );
 }

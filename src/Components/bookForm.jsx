@@ -26,9 +26,17 @@ const VisuallyHiddenInput = styled("input")({
   width: 1,
 });
 
-export default function BookForm() {
+export default function BookForm({ data = "" }) {
   const [open, setOpen] = React.useState(false);
-  const { state, dispatch, addBook } = React.useContext(BookContext);
+  const { state, dispatch, addBook, updateBook } =
+    React.useContext(BookContext);
+
+  React.useEffect(() => {
+    if (data !== "") {
+      dispatch({ type: "update", payload: data });
+    }
+    // console.log("useEffect!")
+  }, []);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -39,7 +47,7 @@ export default function BookForm() {
   };
 
   const handleAddBook = () => {
-    addBook();
+    data === "" ? addBook() : updateBook(data);
     handleClose();
   };
 
@@ -51,9 +59,25 @@ export default function BookForm() {
 
   return (
     <React.Fragment>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Add Book
-      </Button>
+      {data === "" ? (
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={handleClickOpen}
+        >
+          Add Book
+        </Button>
+      ) : (
+        <Button
+          variant="contained"
+          color="success"
+          sx={{ minWidth: 100 }}
+          onClick={handleClickOpen}
+        >
+          Edit
+        </Button>
+      )}
+
       <Dialog
         open={open}
         onClose={handleClose}

@@ -2,12 +2,11 @@ import { useContext } from "react";
 import { BookContext } from "../Context/bookselfContext";
 import BookForm from "./bookForm";
 
-
 const Navbar = () => {
   const { setReqCat } = useContext(BookContext);
 
   return (
-    <nav>
+    <nav className="bookself-navbar-container">
       <section>
         <button className="nav-button-wrapper" onClick={() => setReqCat("all")}>
           All
@@ -33,9 +32,7 @@ const Navbar = () => {
       </section>
 
       <section>
-        {/* <button className="nav-button-wrapper"> */}
-          <BookForm/>
-        {/* </button> */}
+        <BookForm />
       </section>
     </nav>
   );

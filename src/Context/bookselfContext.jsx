@@ -6,8 +6,20 @@ export const BookshelfContextHandler = ({ children }) => {
   const [bookData, setBookData] = useState(booksData);
   const [reqCat, setReqCat] = useState("all");
 
+  const intialState = {
+    name: "",
+    author: "",
+    Category: "",
+    cover: "",
+    rating: 0,
+  };
+
   const reducerFun = (state, action) => {
     switch (action.type) {
+      case "reset":
+        return intialState;
+      case "update":
+        return action.payload;
       case "name":
         return { ...state, name: action.payload };
       case "author":
@@ -21,17 +33,11 @@ export const BookshelfContextHandler = ({ children }) => {
     }
   };
 
-  const intialState = {
-    name: "",
-    author: "",
-    Category: "",
-    cover: "",
-  };
   const [state, dispatch] = useReducer(reducerFun, intialState);
 
   const addBook = () => {
     const newBook = {
-      id: Date(),
+      id: bookData.length+1,
       name: state.name,
       author: state.author,
       category: state.category,
@@ -39,11 +45,20 @@ export const BookshelfContextHandler = ({ children }) => {
         state.cover === ""
           ? "https://th.bing.com/th/id/OIP.0JmYG5E90CH44HqiMM05iwHaLH?rs=1&pid=ImgDetMain"
           : state.cover,
+      rating: 1,
     };
 
     setBookData([...bookData, newBook]);
   };
 
+  const updateBook = (data) => {
+    const newBookData = bookData.reduce(
+      (acc, curr) => (data.id === curr.id ? [...acc, state] : [...acc, curr]),
+      []
+    );
+    // console.log("BookData",newBookData);
+    setBookData(newBookData);
+  };
   return (
     <BookContext.Provider
       value={{
@@ -54,6 +69,7 @@ export const BookshelfContextHandler = ({ children }) => {
         state,
         dispatch,
         addBook,
+        updateBook,
       }}
     >
       {children}
