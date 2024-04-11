@@ -44,6 +44,7 @@ export default function BookForm({ data = "" }) {
 
   const handleClose = () => {
     setOpen(false);
+    dispatch({ type: "reset" });
   };
 
   const handleAddBook = () => {
@@ -60,11 +61,7 @@ export default function BookForm({ data = "" }) {
   return (
     <React.Fragment>
       {data === "" ? (
-        <Button
-          variant="contained"
-          color="secondary"
-          onClick={handleClickOpen}
-        >
+        <Button variant="contained" color="secondary" onClick={handleClickOpen}>
           Add Book
         </Button>
       ) : (

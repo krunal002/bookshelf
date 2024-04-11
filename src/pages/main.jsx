@@ -1,12 +1,12 @@
 import Book from "../Components/book";
 import Header from "../Components/header";
-import Navbar from "../Components/nav";
+// import Navbar from "../Components/nav";
 
 const Bookself = () => {
   return (
     <div>
       <Header />
-      <Navbar />
+      {/* <Navbar /> */}
       <Book />
     </div>
   );

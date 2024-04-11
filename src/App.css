@@ -33,7 +33,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding-left: 16px;
+  /* padding-left: 16px; */
 }
 
 .nav-button-wrapper,
@@ -117,15 +117,18 @@
   }
   .books-list-container {
     margin-top: 16px;
-    padding-left: 8px;
     text-align: left;
     font-size: 18px;
+    max-height: 40vh;
+    overflow-y: auto;
   }
   .books-list-container p {
+    padding-left: 8px;
     padding-top: 4px;
     cursor: pointer;
   }
   .books-list-container p:hover {
+    border-left: 2px solid var(--fifth-color);
     font-weight: bold;
   }
 }

@@ -36,29 +36,40 @@ export const BookshelfContextHandler = ({ children }) => {
   const [state, dispatch] = useReducer(reducerFun, intialState);
 
   const addBook = () => {
-    const newBook = {
-      id: bookData.length+1,
-      name: state.name,
-      author: state.author,
-      category: state.category,
-      cover:
-        state.cover === ""
-          ? "https://th.bing.com/th/id/OIP.0JmYG5E90CH44HqiMM05iwHaLH?rs=1&pid=ImgDetMain"
-          : state.cover,
-      rating: 1,
-    };
+    if (state.name === "" || state.author === "" || state.category === "") {
+      alert("Feel all the fields!");
+    } else {
+      const newBook = {
+        id: bookData.length + 1,
+        name: state.name,
+        author: state.author,
+        category: state.category,
+        cover:
+          state.cover === ""
+            ? "https://th.bing.com/th/id/OIP.0JmYG5E90CH44HqiMM05iwHaLH?rs=1&pid=ImgDetMain"
+            : state.cover,
+        rating: 1,
+      };
 
-    setBookData([...bookData, newBook]);
+      setBookData([...bookData, newBook]);
+      dispatch({ type: "reset" });
+    }
   };
 
   const updateBook = (data) => {
-    const newBookData = bookData.reduce(
-      (acc, curr) => (data.id === curr.id ? [...acc, state] : [...acc, curr]),
-      []
-    );
-    // console.log("BookData",newBookData);
-    setBookData(newBookData);
+    if (state.name === "" || state.author === "" || state.category === "") {
+      alert("Feel all the fields!");
+    } else {
+      const newBookData = bookData.reduce(
+        (acc, curr) => (data.id === curr.id ? [...acc, state] : [...acc, curr]),
+        []
+      );
+      // console.log("BookData",newBookData);
+      setBookData(newBookData);
+      dispatch({ type: "reset" });
+    }
   };
+
   return (
     <BookContext.Provider
       value={{
