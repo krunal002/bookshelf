@@ -36,7 +36,7 @@ export default function BookForm({ data = "" }) {
       dispatch({ type: "update", payload: data });
     }
     console.log("useEffect!")
-  });
+  }, [dispatch, data]);
 
   const handleClickOpen = () => {
     setOpen(true);
